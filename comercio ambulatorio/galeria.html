@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Producto</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>TIENDA &quot;ZAPATILLAS CON ESTILO&quot;</h1>
+        <h2>¡PASOS QUE TE DAN CONFIANZA!</h2>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#" onclick="toggleCart()">Carrito (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <div class="product-page">
+        <div class="gallery">
+            <div class="main-image">
+                <img src="adi1.avif" alt="Imagen principal de las zapatillas Dime Stan Smith" id="main-img" onclick="openLightbox()">
+            </div>
+            <div class="thumbnail">
+                <img src="adi1.avif" alt="Imagen del producto - Vista 1" class="thumbnail-img" onclick="changeMainImage('adi1.avif')">
+                <img src="adi2.avif" alt="Imagen del producto - Vista 2" class="thumbnail-img" onclick="changeMainImage('adi2.avif')">
+                <img src="adi3.avif" alt="Imagen del producto - Vista 3" class="thumbnail-img" onclick="changeMainImage('adi3.avif')">
+            </div>
+            <div class="lightbox" id="lightbox">
+                <span class="close" onclick="closeLightbox()">&times;</span>
+                <img class="lightbox-img" id="lightbox-img">
+            </div>
+        </div>
+
+        <div class="product-details">
+            <h1>ZAPATILLAS DIME STAN SMITH</h1>
+            <p>Zapatillas para hombres de la marca Dime Stan Smith</p>
+            <span>s/429.00</span>
+            <button onclick="addToCart()">Añadir al carrito</button>
+        </div>
+    </div>
+
+    <div class="cart" id="cart" style="display: none;">
+        <h2>Carrito</h2>
+        <ul id="cart-items">
+        </ul>
+        <button onclick="emptyCart()">Vaciar Carrito</button>
+        <button onclick="checkout()">Finalizar Compra</button>
+        <button onclick="toggleCart()">Cerrar</button>
+        <div id="success-message" style="display: none;">Venta exitosa. ¡Gracias por tu compra!</div>
+    </div>
+
+    <footer>
+        <div class="contact-form">
+            <h2>Contacto</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div class="social-links">
+            <h2>Síguenos</h2>
+            <a href="https://www.facebook.com/marketplace/lima/adidas-shoes/?locale=es_LA" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/adidaspe/?hl=es-la" target="_blank">Instagram</a>
+            <a href="https://api.whatsapp.com/send/?phone=5116432094&text&type=phone_number&app_absent=0" target="_blank">WhatsApp</a>
+        </div>
+        <p>&copy; 2024 Mi Tienda Online. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="franco.js"></script>
+</body>
+</html>
